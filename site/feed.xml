@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Vibe Arcade</title>
+  <link>https://pwshfan1980h.github.io/</link>
+  <description>New games</description>
+  <item>
+    <title>Paperman 2</title>
+    <link>https://pwshfan1980h.github.io/paperman-2/</link>
+    <guid>https://github.com/pwshfan1980h/paperman-2</guid>
+    <pubDate>Thu, 08 Oct 2026 01:36:00 GMT</pubDate>
+    <description>Voxel paper-route game in TypeScript + Three.js: deliver the Herald Monday to Friday in Maple Hollow</description>
+  </item>
+  <item>
+    <title>PAPERMAN</title>
+    <link>https://pwshfan1980h.github.io/paperman/</link>
+    <guid>https://github.com/pwshfan1980h/paperman</guid>
+    <pubDate>Tue, 06 Oct 2026 22:45:46 GMT</pubDate>
+    <description>A voxel homage to the 1985 arcade paper route, in Rust + WebAssembly</description>
+  </item>
+  <item>
+    <title>Cave Slinger</title>
+    <link>https://pwshfan1980h.github.io/cave-slinger/</link>
+    <guid>https://github.com/pwshfan1980h/cave-slinger</guid>
+    <pubDate>Sun, 04 Oct 2026 01:12:16 GMT</pubDate>
+    <description>Tiny black-and-white cave gunslinger (Godot 4.7 web)</description>
+  </item>
+  <item>
+    <title>Wyrmbane: Hollow Sun</title>
+    <link>https://pwshfan1980h.github.io/wyrmbane-dark/</link>
+    <guid>https://github.com/pwshfan1980h/wyrmbane-dark</guid>
+    <pubDate>Fri, 02 Oct 2026 21:04:01 GMT</pubDate>
+    <description>Wyrmbane: Hollow Sun, the dark fork. Six weird races. Play in the browser.</description>
+  </item>
+  <item>
+    <title>Wyrmbane</title>
+    <link>https://pwshfan1980h.github.io/wyrmbane/</link>
+    <guid>https://github.com/pwshfan1980h/wyrmbane</guid>
+    <pubDate>Fri, 02 Oct 2026 17:57:03 GMT</pubDate>
+    <description>A Dragon Quest-style JRPG in Godot 4.7. Play in the browser.</description>
+  </item>
+  <item>
+    <title>Relic Runner</title>
+    <link>https://pwshfan1980h.github.io/relic-runner/</link>
+    <guid>https://github.com/pwshfan1980h/relic-runner</guid>
+    <pubDate>Sat, 26 Sep 2026 22:04:19 GMT</pubDate>
+    <description>90s-style whip &amp; revolver cinematic platformer (Godot 4.7)</description>
+  </item>
+  <item>
+    <title>Rocket Bus</title>
+    <link>https://pwshfan1980h.github.io/rocket-bus/</link>
+    <guid>https://github.com/pwshfan1980h/rocket-bus</guid>
+    <pubDate>Fri, 25 Sep 2026 22:36:13 GMT</pubDate>
+    <description>Rocket Bus: time the rocket, clear the gap, land it level. Godot 4 pixel-art physics game.</description>
+  </item>
+  <item>
+    <title>Iron Wake</title>
+    <link>https://pwshfan1980h.github.io/ironwake/</link>
+    <guid>https://github.com/pwshfan1980h/ironwake</guid>
+    <pubDate>Thu, 24 Sep 2026 15:30:38 GMT</pubDate>
+    <description>Iron Wake: third-person mech shooter (Godot 4, web)</description>
+  </item>
+  <item>
+    <title>Minions Must March</title>
+    <link>https://pwshfan1980h.github.io/minions-must-march/</link>
+    <guid>https://github.com/pwshfan1980h/minions-must-march</guid>
+    <pubDate>Wed, 06 May 2026 18:19:25 GMT</pubDate>
+    <description>Godot 4 Lemmings-inspired puzzle game about lanky skeleton minions in crumbling crypts</description>
+  </item>
+  <item>
+    <title>MOONSEC</title>
+    <link>https://pwshfan1980h.github.io/moonsec/</link>
+    <guid>https://github.com/pwshfan1980h/moonsec</guid>
+    <pubDate>Mon, 23 Mar 2026 22:32:02 GMT</pubDate>
+    <description></description>
+  </item>
+</channel></rss>

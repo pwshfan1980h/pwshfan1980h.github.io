@@ -1,0 +1,7 @@
+{
+  "owner": "pwshfan1980h",
+  "siteTitle": "Vibe Arcade",
+  "exclude": ["resume", "*resume*", "*.github.io", "game-drawing-board-and-landing-page", "vibe-arcade"],
+  "includeForks": false,
+  "abandonedAfterDays": 120
+}

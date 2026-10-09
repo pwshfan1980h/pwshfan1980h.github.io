@@ -1,0 +1,6 @@
+{
+  "_help": "Keyed by repo name. Any field here wins over auto-detected data. Fields: title, description, theme (space|fantasy|dark|retro|mech|cozy|arcade|noir), tags [], featured, hidden, playUrl, thumbnail, status (playable|wip|abandoned), model.",
+  "moonsec": { "theme": "space", "tags": ["shooter", "mech"] },
+  "wyrmbane-dark": { "theme": "dark" },
+  "cave-slinger": { "theme": "noir" }
+}

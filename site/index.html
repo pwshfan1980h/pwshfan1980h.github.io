@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vibe Arcade</title>
+  <meta name="description" content="A directory of small vibe-coded browser games. Click and play.">
+  <meta property="og:title" content="Vibe Arcade">
+  <meta property="og:description" content="A directory of small vibe-coded browser games. Click and play.">
+  <link rel="alternate" type="application/rss+xml" title="New games" href="feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Cinzel:wght@700&family=Fredoka:wght@600&family=Orbitron:wght@800&family=Pirata+One&family=Press+Start+2P&family=Russo+One&family=Special+Elite&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="marquee">
+    <h1 id="site-title">Vibe Arcade</h1>
+    <p class="tagline">Small games, built fast. Click a cabinet and play.</p>
+    <dl class="stats" id="stats"></dl>
+  </header>
+
+  <nav class="controls" aria-label="Filter games">
+    <input id="q" type="search" placeholder="Search games…" aria-label="Search games">
+    <select id="sort" aria-label="Sort">
+      <option value="new">Newest</option>
+      <option value="old">Oldest</option>
+      <option value="score">AI score</option>
+      <option value="commits">Most commits</option>
+      <option value="quick">Fastest build</option>
+      <option value="updated">Recently updated</option>
+    </select>
+    <select id="theme" aria-label="Theme"><option value="">All themes</option></select>
+    <button id="random" type="button">🎲 Random game</button>
+  </nav>
+  <div class="years" id="years" role="group" aria-label="Filter by year"></div>
+
+  <main id="list" aria-live="polite"></main>
+
+  <footer>
+    <span id="generated"></span> · <a href="feed.xml">RSS</a> · <a id="gh-link" href="#">GitHub</a>
+  </footer>
+
+  <template id="card">
+    <article class="card">
+      <a class="thumb" target="_blank" rel="noopener"><img loading="lazy" alt=""><span class="status"></span><span class="score" hidden></span></a>
+      <div class="body">
+        <h3 class="title"></h3>
+        <p class="desc"></p>
+        <p class="verdict" hidden></p>
+        <ul class="meta"></ul>
+        <div class="actions">
+          <a class="play" target="_blank" rel="noopener">▶ Play</a>
+          <a class="code" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 9 * * *" # nightly: picks up new repos, commits, dead links
+  workflow_dispatch:
+    inputs:
+      rescore:
+        description: "Re-score every game, ignoring the cache"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+
+      - name: Collect repos
+        run: node scripts/build.mjs
+      - name: Screenshot games with no preview art
+        run: node scripts/screenshot.mjs
+      - name: AI score new or changed games
+        if: env.ANTHROPIC_API_KEY != ''
+        run: node scripts/score.mjs ${{ inputs.rescore && '--force' || '' }}
+      - name: Rebuild with screenshots and scores
+        run: node scripts/build.mjs
+
+      - name: Save cache (scores, thumbs, data)
+        run: |
+          git config user.name "arcade-bot"
+          git config user.email "arcade-bot@users.noreply.github.com"
+          git add data/scores.json site/thumbs site/games.json site/feed.xml 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Update game data [skip ci]" && git push)
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
