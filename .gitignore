@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+
+# Game plans stay local, for unpublished and published games alike
+ideas/

@@ -35,6 +35,7 @@ A public directory of every vibe-coded game on the `pwshfan1980h` GitHub account
 | `scripts/score.mjs` | Claude critic → `data/scores.json` (parked, not run in CI) | code |
 | `site/` | The deployed static site (index, style, app, generated JSON/RSS, thumbs) | code + generated |
 | `.github/workflows/build.yml` | Nightly + on-push build, screenshot, commit caches, deploy Pages | code |
+| `ideas/<game>/DESIGN.md` | Game plans, for unpublished and published games. **Gitignored: local only, never pushed.** | you / Claude |
 | `.claude/skills/arcade/` | How Claude should work in this repo | you / Claude |
 
 Generated files (`site/games.json`, `site/feed.xml`, `site/thumbs/*`, `data/scores.json`) are committed by the bot. Don't hand-edit them; change the inputs and rebuild.
