@@ -32,7 +32,7 @@ function card(g) {
   el.querySelector("img").src = g.thumbnail;
   const status = el.querySelector(".status");
   const isNew = Date.now() - new Date(g.createdAt) < 14 * 86400000;
-  const s = isNew && g.status !== "broken" ? "new" : g.status;
+  const s = isNew && g.status === "playable" ? "new" : g.status;
   status.textContent = { new: "new", broken: "link down", abandoned: "dormant", wip: "WIP" }[s] ?? "";
   status.dataset.s = s;
   status.hidden = !status.textContent;
