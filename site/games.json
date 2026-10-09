@@ -1,8 +1,36 @@
 {
   "title": "Vibe Arcade",
   "owner": "pwshfan1980h",
-  "generatedAt": "2026-10-09T21:27:45.556Z",
+  "generatedAt": "2026-10-09T21:29:26.796Z",
   "games": [
+    {
+      "name": "auto-party-story",
+      "title": "Auto Party Story",
+      "description": "Isometric auto-battler dungeon crawler: build a party in town, send them delving, escape with the loot. (In development)",
+      "repoUrl": "https://github.com/pwshfan1980h/auto-party-story",
+      "playUrl": null,
+      "playAlive": null,
+      "thumbnail": "https://opengraph.githubassets.com/1/pwshfan1980h/auto-party-story",
+      "needsScreenshot": false,
+      "createdAt": "2026-10-09T21:29:07Z",
+      "year": 2026,
+      "lastCommitAt": "2026-10-09T21:29:06Z",
+      "commits": 1,
+      "buildHours": 0,
+      "engine": null,
+      "stars": 0,
+      "theme": "fantasy",
+      "tags": [
+        "auto-battler",
+        "dungeon-crawler"
+      ],
+      "touch": false,
+      "featured": false,
+      "model": null,
+      "status": "wip",
+      "score": null,
+      "sha": "6d46ac1482ad933d803c4b57a2ca1220602472d4"
+    },
     {
       "name": "paperman-2",
       "title": "Paperman 2",

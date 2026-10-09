@@ -20,7 +20,7 @@ Work through these in order and stop at the first that fits:
 2. **Things a repo can't express** (theme, featured, hidden, custom title or blurb, `model`, `status`): edit `data/overrides.json`, keyed by repo name.
 3. **Account-wide rules** (exclude a repo pattern, site title, dormant threshold): edit `data/config.json`. Non-game repos (resume, the arcade itself, `*.github.io`) belong in `exclude`.
 4. **How data is gathered**: edit `scripts/*.mjs`.
-5. **Any game plan** (new idea or an existing game): `ideas/<game-slug>/DESIGN.md`. `ideas/` is gitignored, so plans never reach the public repo; never force-add them or copy plan contents into tracked files. Plan only; don't create the repo or scaffold code until asked. Check `~/Projects/game-asset-cache` (read its `AGENTS.md`) for art and sound that fits.
+5. **Any game plan**: before the game has a repo, `ideas/<game-slug>/DESIGN.md`; after, it moves to the game repo's gitignored `plans/` folder (e.g. `~/Projects/auto-party-story/plans/`). `ideas/` is gitignored, so plans never reach the public repo; never force-add them or copy plan contents into tracked files. Plan only; don't create the repo or scaffold code until asked. Check `~/Projects/game-asset-cache` (read its `AGENTS.md`) for art and sound that fits.
 6. **How it looks**: edit `site/index.html`, `site/style.css` or `site/app.js`.
 
 Never hand-edit generated files: `site/games.json`, `site/feed.xml`, `site/thumbs/*`, `data/scores.json`. Change the inputs and rebuild.
