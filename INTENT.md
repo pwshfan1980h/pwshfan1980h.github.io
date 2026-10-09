@@ -7,7 +7,7 @@ A public directory of every vibe-coded game on the `pwshfan1980h` GitHub account
 1. **Zero-touch growth.** A new game shows up with no edits here: push a public repo with GitHub Pages turned on and the nightly build adds it. This has to keep working at hundreds of games.
 2. **Each card answers four things**: what it looks like (thumbnail), what it is (description), where to play it, and where the code is.
 3. **Browse by time.** Grouped by year (2026, 2027, …), with sort and filter by year, theme and score, plus search.
-4. **Light tracking for fun**: commit count, time from first to last commit, last update, an AI critic score and verdict, and dead-link detection.
+4. **Light tracking for fun**: commit count, time from first to last commit, last update and dead-link detection. AI critic score shows **TBD** for now: no API key in CI. `scripts/score.mjs` is parked until a keyless way to score is chosen.
 5. **Themed but readable.** Each card is styled to match its game's genre, but the layout stays consistent so a grid of hundreds still scans well.
 
 ## Non-goals
@@ -32,15 +32,16 @@ A public directory of every vibe-coded game on the `pwshfan1980h` GitHub account
 | `data/scores.json` | AI score cache (sha-keyed) | `scripts/score.mjs` only |
 | `scripts/build.mjs` | GitHub API → `site/games.json` + `site/feed.xml` | code |
 | `scripts/screenshot.mjs` | Playwright captures for games with no `og:image` → `site/thumbs/` | code |
-| `scripts/score.mjs` | Claude critic → `data/scores.json` | code |
+| `scripts/score.mjs` | Claude critic → `data/scores.json` (parked, not run in CI) | code |
 | `site/` | The deployed static site (index, style, app, generated JSON/RSS, thumbs) | code + generated |
-| `.github/workflows/build.yml` | Nightly + on-push build, score, commit caches, deploy Pages | code |
+| `.github/workflows/build.yml` | Nightly + on-push build, screenshot, commit caches, deploy Pages | code |
 | `.claude/skills/arcade/` | How Claude should work in this repo | you / Claude |
 
 Generated files (`site/games.json`, `site/feed.xml`, `site/thumbs/*`, `data/scores.json`) are committed by the bot. Don't hand-edit them; change the inputs and rebuild.
 
 ## Backlog (cheap ideas, roughly in order)
 
+- [ ] Real AI scores without an API key in CI (e.g. score locally through Claude Code and commit `data/scores.json`).
 - [ ] Stats page: games per year, average score per year, theme mix.
 - [ ] "On this day": games from the same date in earlier years.
 - [ ] Hover-preview GIFs (record a few seconds with Playwright).

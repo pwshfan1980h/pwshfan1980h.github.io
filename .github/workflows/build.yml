@@ -6,11 +6,6 @@ on:
   schedule:
     - cron: "17 9 * * *" # nightly: picks up new repos, commits, dead links
   workflow_dispatch:
-    inputs:
-      rescore:
-        description: "Re-score every game, ignoring the cache"
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -29,7 +24,6 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -43,17 +37,14 @@ jobs:
         run: node scripts/build.mjs
       - name: Screenshot games with no preview art
         run: node scripts/screenshot.mjs
-      - name: AI score new or changed games
-        if: env.ANTHROPIC_API_KEY != ''
-        run: node scripts/score.mjs ${{ inputs.rescore && '--force' || '' }}
-      - name: Rebuild with screenshots and scores
+      - name: Rebuild with screenshots
         run: node scripts/build.mjs
 
-      - name: Save cache (scores, thumbs, data)
+      - name: Save cache (thumbs, data)
         run: |
           git config user.name "arcade-bot"
           git config user.email "arcade-bot@users.noreply.github.com"
-          git add data/scores.json site/thumbs site/games.json site/feed.xml 2>/dev/null || true
+          git add site/thumbs site/games.json site/feed.xml 2>/dev/null || true
           git diff --cached --quiet || (git commit -m "Update game data [skip ci]" && git push)
 
       - uses: actions/configure-pages@v5

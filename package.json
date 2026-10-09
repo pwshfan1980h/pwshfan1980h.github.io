@@ -6,7 +6,7 @@
     "build": "node scripts/build.mjs",
     "shots": "node scripts/screenshot.mjs && node scripts/build.mjs",
     "score": "node scripts/score.mjs && node scripts/build.mjs",
-    "all": "node scripts/build.mjs && node scripts/screenshot.mjs && node scripts/score.mjs && node scripts/build.mjs",
+    "all": "node scripts/build.mjs && node scripts/screenshot.mjs && node scripts/build.mjs",
     "serve": "npx --yes serve site"
   },
   "dependencies": {

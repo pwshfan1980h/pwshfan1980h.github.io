@@ -28,7 +28,7 @@ Never hand-edit generated files: `site/games.json`, `site/feed.xml`, `site/thumb
 
 - **Rebuild locally**: `GITHUB_TOKEN=$(gh auth token) npm run build`, then `npm run serve`.
 - **Re-shoot a thumbnail**: delete `site/thumbs/<repo>.png`, then `npm run shots`. Only games without an `og:image` get screenshots.
-- **Re-score**: `npm run score` scores only new or changed shas. `node scripts/score.mjs --force` re-scores everything and spends API money, so ask the user first. Needs `ANTHROPIC_API_KEY`.
+- **Scores**: parked and shown as TBD. The user doesn't want an API key used, so never add `ANTHROPIC_API_KEY` to CI or run `scripts/score.mjs` without being asked.
 - **Add a theme**: add a regex to `THEME_WORDS` in `scripts/build.mjs` (order matters; the first match wins) and a `.card[data-theme="<name>"]` block in `site/style.css` that sets the `--c-*` variables (including `--c-on-accent` for Play button text). Load any new Google Font in `site/index.html`. Add the name to the theme list in `data/overrides.json` `_help`.
 - **Hide a game**: `"<repo>": { "hidden": true }` in overrides. To drop a whole class of repos, add a glob to `config.exclude` instead.
 

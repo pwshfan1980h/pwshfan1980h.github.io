@@ -36,11 +36,11 @@ function card(g) {
   status.textContent = { new: "new", broken: "link down", abandoned: "dormant", wip: "WIP" }[s] ?? "";
   status.dataset.s = s;
   status.hidden = !status.textContent;
+  const badge = el.querySelector(".score");
+  badge.hidden = false;
+  badge.textContent = g.score ? `★ ${g.score.value.toFixed(1)}` : "★ TBD";
+  badge.title = g.score ? "AI critic score" : "AI critic score coming later";
   if (g.score) {
-    const badge = el.querySelector(".score");
-    badge.hidden = false;
-    badge.textContent = `★ ${g.score.value.toFixed(1)}`;
-    badge.title = "AI critic score";
     const v = el.querySelector(".verdict");
     v.hidden = false;
     v.textContent = `“${g.score.verdict}”`;
@@ -101,6 +101,7 @@ function controls() {
   for (const t of [...new Set(data.games.map((g) => g.theme))].sort()) {
     $("#theme").append(new Option(t[0].toUpperCase() + t.slice(1), t));
   }
+  if (!data.games.some((g) => g.score)) $('#sort option[value="score"]').remove();
   for (const id of ["q", "sort", "theme"]) {
     $(`#${id}`).value = state[id];
     $(`#${id}`).addEventListener("input", (e) => { state[id] = e.target.value; sync(); });
@@ -132,8 +133,8 @@ function stats() {
     ["games", g.length],
     ["commits", g.reduce((n, x) => n + (x.commits || 0), 0).toLocaleString()],
     ["years", new Set(g.map((x) => x.year)).size],
-    scored.length && ["avg AI score", (scored.reduce((n, x) => n + x.score.value, 0) / scored.length).toFixed(1)],
-  ].filter(Boolean);
+    ["avg AI score", scored.length ? (scored.reduce((n, x) => n + x.score.value, 0) / scored.length).toFixed(1) : "TBD"],
+  ];
   $("#stats").innerHTML = items.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
 }
 
