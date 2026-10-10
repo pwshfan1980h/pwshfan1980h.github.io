@@ -1,7 +1,7 @@
 {
   "title": "Vibe Arcade",
   "owner": "pwshfan1980h",
-  "generatedAt": "2026-10-09T21:32:50.120Z",
+  "generatedAt": "2026-10-10T15:27:09.573Z",
   "games": [
     {
       "name": "auto-party-story",
@@ -14,10 +14,10 @@
       "needsScreenshot": false,
       "createdAt": "2026-10-09T21:29:07Z",
       "year": 2026,
-      "lastCommitAt": "2026-10-09T21:29:06Z",
-      "commits": 1,
-      "buildHours": 0,
-      "engine": null,
+      "lastCommitAt": "2026-10-10T05:34:38Z",
+      "commits": 15,
+      "buildHours": 8.092222222222222,
+      "engine": "TypeScript",
       "stars": 0,
       "theme": "fantasy",
       "tags": [
@@ -29,7 +29,7 @@
       "model": null,
       "status": "wip",
       "score": null,
-      "sha": "6d46ac1482ad933d803c4b57a2ca1220602472d4"
+      "sha": "fb98ee3848d676258bb2001597ec089bb15545bc"
     },
     {
       "name": "paperman-2",
