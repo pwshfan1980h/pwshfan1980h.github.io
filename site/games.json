@@ -1,22 +1,22 @@
 {
   "title": "Vibe Arcade",
   "owner": "pwshfan1980h",
-  "generatedAt": "2026-10-10T15:27:09.573Z",
+  "generatedAt": "2026-10-11T15:47:26.234Z",
   "games": [
     {
       "name": "auto-party-story",
       "title": "Auto Party Story",
       "description": "Isometric auto-battler dungeon crawler: build a party in town, send them delving, escape with the loot. (In development)",
       "repoUrl": "https://github.com/pwshfan1980h/auto-party-story",
-      "playUrl": null,
-      "playAlive": null,
-      "thumbnail": "https://opengraph.githubassets.com/1/pwshfan1980h/auto-party-story",
+      "playUrl": "https://pwshfan1980h.github.io/auto-party-story/",
+      "playAlive": true,
+      "thumbnail": "https://pwshfan1980h.github.io/auto-party-story/preview.png",
       "needsScreenshot": false,
       "createdAt": "2026-10-09T21:29:07Z",
       "year": 2026,
-      "lastCommitAt": "2026-10-10T05:34:38Z",
-      "commits": 15,
-      "buildHours": 8.092222222222222,
+      "lastCommitAt": "2026-10-10T22:56:04Z",
+      "commits": 40,
+      "buildHours": 25.449444444444445,
       "engine": "TypeScript",
       "stars": 0,
       "theme": "fantasy",
@@ -29,7 +29,7 @@
       "model": null,
       "status": "wip",
       "score": null,
-      "sha": "fb98ee3848d676258bb2001597ec089bb15545bc"
+      "sha": "40dd3ead3a00fe8230a850e1d110f416892e0af4"
     },
     {
       "name": "paperman-2",
